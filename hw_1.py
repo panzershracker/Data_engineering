@@ -75,7 +75,7 @@ for i in odd_list:
     if candidate % 7 == 0:
         sum_of_sums_2 += candidate
 
-
+print(f'Список 2 {odd_list}')
 # 3.Склонение слова
 # Реализовать склонение слова «процент» во фразе «N процентов».
 # Вывести эту фразу на экран отдельной строкой для каждого из чисел в интервале от 1 до 100:
@@ -92,13 +92,16 @@ n = 100
 
 for i in range(1, n + 1):
     endswith_ = None
-    if str(i).endswith('1'):
+    if i in [11, 12, 13, 14]:
+        endswith_ = 'ов'
+    elif str(i).endswith('1'):
         endswith_ = ''
-    if str(i).endswith(('2', '3', '4')):
+    elif str(i).endswith(('2', '3', '4')):
         endswith_ = 'а'
-    if str(i).endswith(('5', '6', '7', '8', '9', '0')):
+    elif str(i).endswith(('5', '6', '7', '8', '9', '0')):
         endswith_ = 'ов'
     print(f'{i} процент' + endswith_)
+
 
 
 
