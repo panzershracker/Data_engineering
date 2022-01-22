@@ -19,6 +19,7 @@ import random
 
 
 def get_jokes(a, b, c, n_jokes, repeats=False):
+    a, b, c = a.copy(), b.copy(), c.copy()
 
     list_of_jokes = []
 
@@ -51,5 +52,6 @@ nouns = ["автомобиль", "лес", "огонь", "город", "дом"]
 adverbs = ["сегодня", "вчера", "завтра", "позавчера", "ночью"]
 adjectives = ["веселый", "яркий", "зеленый", "утопичный", "мягкий"]
 
+print(get_jokes(nouns, adverbs, adjectives, 3))
 print(get_jokes(nouns, adverbs, adjectives, 3))
 
