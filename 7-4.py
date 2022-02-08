@@ -27,14 +27,15 @@ def dir_stats(dir_path):
     for i in os.listdir(abs_path):
 
         if os.path.isfile(i):
+            file_size = os.stat(i).st_size
 
-            if 100 <= os.stat(i).st_size < 1000:
+            if 100 <= file_size < 1000:
                 files_dict[100] += 1
-            elif 1000 <= os.stat(i).st_size < 10000:
+            elif 1000 <= file_size < 10000:
                 files_dict[1000] += 1
-            elif 10000 <= os.stat(i).st_size < 100000:
+            elif 10000 <= file_size < 100000:
                 files_dict[10000] += 1
-            elif os.stat(i).st_size > 100000:
+            elif file_size > 100000:
                 files_dict[100000] += 1
             else:
                 pass

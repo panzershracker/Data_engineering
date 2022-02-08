@@ -28,24 +28,25 @@ def ext_dir_stats(dir_path):
 
         if os.path.isfile(i):
 
+            file_size = os.stat(i).st_size
             extension = i.split('.')[-1]
 
-            if 100 <= os.stat(i).st_size < 1000:
+            if 100 <= file_size < 1000:
                 files_dict[100][0] += 1
                 if extension not in files_dict[100][1]:
                     files_dict[100][1].append(i)
 
-            elif 1000 <= os.stat(i).st_size < 10000:
+            elif 1000 <= file_size < 10000:
                 files_dict[1000][0] += 1
                 if extension not in files_dict[1000][1]:
                     files_dict[1000][1].append(i)
 
-            elif 10000 <= os.stat(i).st_size < 100000:
+            elif 10000 <= file_size < 100000:
                 files_dict[10000][0] += 1
                 if extension not in files_dict[10000][1]:
                     files_dict[10000][1].append(i)
 
-            elif os.stat(i).st_size > 100000:
+            elif file_size > 100000:
                 files_dict[100000][0] += 1
                 if extension not in files_dict[100000][1]:
                     files_dict[100000][1].append(i)
